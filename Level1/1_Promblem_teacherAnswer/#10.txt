@@ -1,0 +1,97 @@
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void ReadMarks(int& Mark1, int& Mark2, int& Mark3)
+{
+	cout << "Enter Mark 1:" << endl;
+	cin >> Mark1;
+
+	cout << "Enter Mark 2:" << endl;
+	cin >> Mark2;
+
+	cout << "Enter Mark 3:" << endl;
+	cin >> Mark3;
+}
+
+int SumOf3Marks(int Mark1, int Mark2, int Mark3)
+{
+	return Mark1 + Mark2 + Mark3;
+}
+
+float CalculateAverage(int Mark1, int Mark2, int Mark3)
+{
+	return (float)SumOf3Marks(Mark1, Mark2, Mark3) / 3;
+}
+
+void PrintResults(int Total)
+{
+	cout << "\n The Average is : " << Total << endl;
+}
+
+
+int main()
+{
+	int Mark1, Mark2, Mark3;
+	ReadMarks(Mark1, Mark2, Mark3);
+	PrintResults(CalculateAverage(Mark1, Mark2, Mark3));
+
+
+	return 0;
+}
+
+
+// another anser using array
+
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void ReadMarks(int Marks[3])
+{
+	cout << "Enter Mark 1:" << endl;
+	cin >> Marks[0];
+
+	cout << "Enter Mark 2:" << endl;
+	cin >> Marks[1];
+
+	cout << "Enter Mark 3:" << endl;
+	cin >> Marks[2];
+}
+
+int SumOf3Marks(int Marks[3])
+{
+	return Marks[0] + Marks[1] + Marks[2];
+}
+
+float CalculateAverage(int Marks[3])
+{
+	return (float) SumOf3Marks(Marks) / 3;
+}
+
+
+void PrintResults(int Total)
+{
+	cout << "\n The Average is : " << Total << endl;
+}
+
+
+int main()
+{
+	int Marks[3] = {};
+	ReadMarks(Marks);
+	PrintResults(CalculateAverage(Marks));
+
+
+	return 0;
+}
+
+
+
+

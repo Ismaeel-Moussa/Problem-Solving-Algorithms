@@ -1,0 +1,24 @@
+
+// using while loop
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int number;
+	cout << "Enter the number : " << endl;
+	cin >> number;
+	int sum = 0;
+	while (number != -99) {
+
+		sum += number;
+		cout << "Enter the number : " << endl;
+		cin >> number;
+} 
+		cout << sum << endl;
+
+
+	return 0;
+}

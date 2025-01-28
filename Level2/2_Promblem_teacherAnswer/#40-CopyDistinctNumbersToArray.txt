@@ -1,0 +1,78 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+short FindNumberPositionInArray(int Number, int arr[100], int arrLenght)
+{
+	for (int i = 0; i < arrLenght; i++)
+	{
+		if (Number == arr[i]) {
+			return i; // this will break the function and return the index.
+		}
+	}
+
+	// if you reaches here this mean the number not found.
+	return -1;
+
+}
+
+bool IsNumberInArray(int Number , int arr[100], int arrLenght)
+{
+	return FindNumberPositionInArray(Number, arr, arrLenght) != -1;
+}
+
+void AddArrayElement(int Number, int arr[100], int& arrLength)
+{
+	arrLength++;
+	arr[arrLength - 1] = Number;
+
+}
+
+void CopyDistinctNumbersToArray(int arr[100], int arr2[100], int arrLength, int& arr2Length)
+{
+	for (int i = 0; i < arrLength; i++)
+	{
+		if (!IsNumberInArray(arr[i], arr2, arr2Length))
+		{
+			AddArrayElement(arr[i], arr2, arr2Length);
+		}
+		
+	}
+}
+
+void PrintArray(int arr[100], int arrLength)
+{
+	for (int i = 0; i < arrLength; i++)
+	{
+		cout << arr[i] << " ";
+	}
+
+	cout << "\n" << endl;
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int arr[100] = {10,10,10,50,50,70,70,70,70,90};
+	int arrLength = 10;
+	int arr2[100] = {}, arr2Length = 0;
+
+	CopyDistinctNumbersToArray(arr, arr2, arrLength, arr2Length);
+	
+	cout << "Array 1 elements :\n";
+	PrintArray(arr, arrLength);
+
+	cout << "Array 2 elements distinct elements :\n";
+	PrintArray(arr2, arr2Length);
+
+
+	return 0;
+}
+
+

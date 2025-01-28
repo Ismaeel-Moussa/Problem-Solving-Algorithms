@@ -1,0 +1,21 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void PrintName(string Name) {
+
+	cout << "\n This Is Your Name : " << Name << endl;
+}
+
+int main()
+{
+	PrintName("Ismaeel");
+
+		return 0;
+}
+
+
+

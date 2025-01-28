@@ -1,0 +1,29 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void PrintFibonacciSeries(int Number)
+{
+	short FebNumber = 0, Prev2 = 0, Prev1 = 1;
+
+	for (int i = 1; i <= Number; i++)
+	{
+		FebNumber = Prev1 + Prev2;
+		cout << FebNumber << " ";
+		Prev1 = Prev2;
+		Prev2 = FebNumber;
+	
+	}
+}
+
+int main()
+{
+
+	PrintFibonacciSeries(10);
+
+	system("pause>0");
+
+	return 0;
+
+}
+

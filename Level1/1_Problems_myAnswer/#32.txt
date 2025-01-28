@@ -1,0 +1,56 @@
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+ 
+	int Number,M;
+	cout << "Enter the number : " << endl;
+	cin >> Number;
+	cout << "Enter M : " << endl;
+	cin >> M;
+	
+	int P = 1;
+	for (int i = 1; i <= M; i++) {
+
+		if (M == 0) {
+		cout << P << endl;
+		}
+		else {
+		P *= Number;	
+		cout << P << endl;
+		}
+
+		
+	}	
+	return 0;
+}
+
+
+// using while loop
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int number, M;
+	cout << "Enter the number : " << endl;
+	cin >> number;
+	cout << "Enter the M" << endl;
+	cin >> M;
+
+	int i = 1;
+	int power = 1;
+	while (i <= M) {
+
+		power *= number;
+		cout << power << endl;
+		i++;
+	}
+
+	return 0;
+}

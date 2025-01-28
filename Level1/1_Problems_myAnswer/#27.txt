@@ -1,0 +1,38 @@
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int N;
+	cout << "Enter a number : " << endl;
+	cin >> N;
+	for (int i = N; i >= 1; i--) {
+		cout << i << endl;
+	}
+
+	return 0;
+}
+
+
+
+// using while loop
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int i = 10;
+	while (i >= 1) {
+
+		cout << i << endl;
+		i--;
+
+	}
+
+	
+	return 0;
+}

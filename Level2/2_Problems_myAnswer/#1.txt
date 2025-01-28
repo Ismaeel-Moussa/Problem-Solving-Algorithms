@@ -1,0 +1,54 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+
+
+void Header() {
+	cout << "\n\n			  Multipliaction Table From 1 to 10\n\n";
+	cout << "\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\n";
+	cout << "___________________________________________________________________________________";
+
+
+}
+
+void SideHeader(int Number)
+{
+	if (Number == 10) {
+		cout << Number << "  |   ";
+	}
+	else
+	{
+		cout << Number << "   |   ";
+	}
+
+
+}
+
+void Multipliaction()
+{
+	for (int i = 1; i <= 10; i++) {
+		cout << "\t\n";
+		SideHeader(i);
+
+		for (int j = 1; j <= 10; j++) {
+
+			cout << i * j << "\t";
+
+		}
+	}
+}
+
+int main()
+{
+	Header();
+	Multipliaction();
+
+
+	return 0;
+}
+
+// It take 2 Hour to solve this problem +_+ 

@@ -1,0 +1,22 @@
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float CircleAreaFunction(int L) {
+
+	return floor(pow(L, 2) / (3.14 * 4));
+}
+int main()
+{
+
+	int L;
+	cout << "Enter L: " << endl;
+	cin >> L;
+
+
+	cout << CircleAreaFunction(L);
+
+	return 0;
+}

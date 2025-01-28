@@ -1,0 +1,15 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  
+	int Number;
+	cout << "Enter a Number: " << endl;
+	cin >> Number;
+
+	cout << "Half of the " << Number << " is " << Number / 2;
+
+	return 0;
+}

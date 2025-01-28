@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float RectangleAreaFunction(int a, int d) {
+	return a * sqrt(pow(d, 2) - pow(a, 2));
+}
+
+
+int main()
+{
+
+	float a, d;
+	cout << "Enter a :" << endl;
+	cin >> a;
+	cout << "Enter d :" << endl;
+	cin >> d;
+
+	cout << RectangleAreaFunction(a,d);
+
+
+	return 0;
+}
+
+

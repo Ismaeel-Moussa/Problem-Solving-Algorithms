@@ -1,0 +1,20 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float CircleAreaFunction(int D) {
+	const float PI = 3.14;
+	return ceil((PI * pow(D, 2)) / 4);
+}
+
+int main()
+{
+
+	float D;
+	cout << "Enter D: " << endl;
+	cin >> D;
+	cout << CircleAreaFunction(D);
+
+	return 0;
+}

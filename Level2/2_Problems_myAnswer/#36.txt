@@ -1,0 +1,68 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+int ReadNumber()
+{
+	int Number = 0;
+
+	cout << "Enter a number ?" << endl;
+		cin >> Number;
+
+	return Number;
+}
+
+void PrintArray(int arr[100], int arrLength)
+{
+	for (int i = 0; i < arrLength; i++)
+	{
+		cout << arr[i] << " ";
+	}
+
+	cout << "\n" << endl;
+}
+
+void AddArrayElement(int Number, int arr[100], int& arrLength)
+{
+	arrLength++;
+	arr[arrLength - 1] = Number;
+
+}
+
+void InputUserNumberInArray(int arr[100], int& arrLength)
+{
+	int AddMore = 0;
+
+	do
+	{	
+		AddArrayElement(ReadNumber(), arr, arrLength);
+
+		cout << "Do you want to add more number ? [0] : No , [1] : Yes" << endl;
+		cin >> AddMore;
+
+	} while (AddMore);
+
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int arr[100] = {};
+	int arrLenght = 0;
+	
+	InputUserNumberInArray(arr,arrLenght);
+
+	cout << "Array Lenght : " << arrLenght << endl;
+	cout << "Array elements: ";
+	PrintArray(arr, arrLenght);
+
+	return 0;
+}
+
+

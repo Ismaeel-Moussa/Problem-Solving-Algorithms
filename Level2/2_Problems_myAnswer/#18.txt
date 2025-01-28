@@ -1,0 +1,56 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+string ReadText(string Message)
+{
+	string Letters = "";
+
+	cout << Message << endl;
+	cin >> Letters;
+
+	return Letters;
+}
+
+string Encryption(string OrginalText) 
+{
+	 string EncryptText;
+
+	 for (int i = 0; i <= OrginalText.length() - 1; i++)
+	 {
+		 EncryptText += char(OrginalText[i] + 2);
+	 }
+	
+	 return EncryptText;
+}
+
+string Decryption(string EncryptText)
+ {
+	 string DecryptText;
+
+	 for (int i = 0; i <= EncryptText.length() - 1; i++)
+	 {
+		 DecryptText += char(EncryptText[i] - 2);
+	 }
+
+	 return DecryptText;
+ }
+
+
+int main()
+{
+	string Text = ReadText("Enter Your Name ?");
+	string TextAfterEncryption = Encryption(Text);
+
+	cout << "Text Before Encryption : " << Text << endl;
+	cout << "Text After Encryption : " << TextAfterEncryption << endl;
+	cout << "Text After Decryption : " << Decryption(TextAfterEncryption) << endl;
+
+	
+
+	return 0;
+}
+

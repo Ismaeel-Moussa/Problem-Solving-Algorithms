@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int LoanAmount, Months;
+
+	cout << "Enter the LoanAmount :" << endl;
+	cin >> LoanAmount;
+	cout << "Enter the Months :" << endl;
+	cin >> Months;
+
+	cout << LoanAmount / Months << endl;
+
+	return 0;
+}

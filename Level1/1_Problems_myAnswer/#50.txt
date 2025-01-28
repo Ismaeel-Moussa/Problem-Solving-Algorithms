@@ -1,0 +1,31 @@
+
+// using while loop
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int ATM_PIN_CODE, Balance = 7500, FailedCount = 0;
+
+	cout << "Enter the ATM PIN CODE : " << endl;
+	cin >> ATM_PIN_CODE;
+
+	while (!(ATM_PIN_CODE == 1234 || FailedCount == 3)) {
+		cout << "Wrong PIN \n" ;
+		cout << "Try again ? \n";
+		cin >> ATM_PIN_CODE;	
+		FailedCount++;
+	}
+	if (ATM_PIN_CODE == 1234) {
+		cout << "Your Balace is " << Balance << endl;
+	}
+	else {
+		cout << "Card Locked";
+	}
+	return 0;
+}
+
+
+

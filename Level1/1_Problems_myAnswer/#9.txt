@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  
+	int Number1, Number2, Number3;
+
+	cout << "Enter Number1: " << endl;
+	cin >> Number1;
+	cout << "Enter Number2: " << endl;
+	cin >> Number2;
+	cout << "Enter Number3: " << endl;
+	cin >> Number3;
+
+	cout << Number1 + Number2 + Number3;
+	return 0;
+}

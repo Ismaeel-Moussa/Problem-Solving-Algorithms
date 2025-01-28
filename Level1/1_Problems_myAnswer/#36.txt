@@ -1,0 +1,51 @@
+
+#include <iostream>
+using namespace std;
+
+enum enOperationType { Addition = 1, Subtraction = 2, Division = 3 , Multiplication = 4 };
+
+int main()
+{
+
+	int num1, num2;
+
+	cout << "Enter Number 1: " << endl;
+	cin >> num1;
+	cout << "Enter Number 2: " << endl;
+	cin >> num2;
+	cout << "***************************** \n";
+	cout << "Enter the Operation Type: " << endl;
+	cout << "(1) Addition \n";
+	cout << "(2) Subtraction \n";
+	cout << "(3) Division \n";
+	cout << "(4) Multiplication \n";
+	cout << "Enter Your Choise ? \n";
+	cout << "***************************** \n";
+
+
+
+	int T;
+	enOperationType OperationType;
+
+	cin >> T;
+	OperationType = (enOperationType)T;
+
+	switch (OperationType) {
+	case enOperationType::Addition:
+		cout << num1 + num2 << endl;
+		break;
+	case enOperationType::Subtraction:
+		cout << num1 - num2 << endl;
+		break;
+	case enOperationType::Division:
+		cout << num1 / num2 << endl;
+		break;
+	case enOperationType::Multiplication:
+		cout << num1 * num2 << endl;
+		break;
+	default:
+		cout << "Wrong Input";
+}
+
+	return 0;
+}

@@ -1,0 +1,87 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+using namespace std;
+
+struct sDate
+{
+	short Year;
+	short Month;
+	short Day;
+};
+
+short ReadYear()
+{
+	short Year = 0;
+	cout << "Please Enter a year? ";
+	cin >> Year;
+	return Year;
+}
+
+short ReadMonth()
+{
+	short Number = 0;
+	cout << "Please Enter a month? ";
+	cin >> Number;
+	return Number;
+}
+
+short ReadDay()
+{
+	short Day = 0;
+	cout << "Please Enter a day? ";
+	cin >> Day;
+	return Day;
+}
+
+sDate ReadFullDate()
+{
+	sDate Date;
+
+	Date.Day = ReadDay();
+	Date.Month = ReadMonth();
+	Date.Year = ReadYear();
+
+
+	return Date;
+}
+
+bool isLeapYear(short Year)
+{
+	return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
+
+}
+
+int NumberOfDaysInMonths(short Month, short Year)
+{
+	if (Month < 1 || Month > 12)
+		return 0;
+
+	short DaysInMonths[12] = { 31,28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	return (Month == 2) ? (isLeapYear(Year) ? 29 : 28) : DaysInMonths[Month - 1];
+
+}
+
+bool isValidDate(sDate Date)
+{
+	if (Date.Day < 1 || Date.Day > 31 || Date.Month < 1 || Date.Month > 12)
+		return false;
+
+	return (Date.Day <= NumberOfDaysInMonths(Date.Month, Date.Year));
+}
+
+int main()
+{
+	sDate Date = ReadFullDate();
+
+	if (isValidDate(Date))
+	{
+		cout << "Yes , Date is a valide date." << endl;
+	}
+	else
+	{
+		cout << "No , Date is NOT valide date." << endl;
+	}
+
+	return 0;
+}

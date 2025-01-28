@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+void PrintMatrix(int matrix[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			printf("%d\t", matrix[i][j]);
+		}
+		cout << endl;
+	}
+
+	cout << "\n";
+}
+
+int RandomNumber(int From, int To)
+{
+	// Function to generate a random number
+
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			arr[i][j] = RandomNumber(1, 10);
+		}
+	}
+}
+
+bool IsNumberExistsInMatrix(int matrix1[3][3], short Rows, short Cols, int Number)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			if (Number == matrix1[i][j])
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int matrix1[3][3];
+
+	cout << "Matrix1: " << endl;
+	FillMatrixWithRandomNumbers(matrix1, 3, 3);
+	PrintMatrix(matrix1, 3, 3);
+
+	int Number = ReadPositiveNumber("Please Enter the number to look for in matreix ?");
+
+	if (IsNumberExistsInMatrix(matrix1, 3, 3,Number))
+		cout << "Yes: It's there." << endl;
+	else
+		cout << "No: It's NOT there." << endl;
+	
+
+	system("pause>0");
+
+	return 0;
+
+}
+

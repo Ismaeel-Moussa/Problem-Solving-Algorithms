@@ -1,0 +1,64 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+short ReadNumber() {
+
+	short Number;
+	cout << "Enter the number : " << endl;
+	cin >> Number;
+
+	return Number;
+}
+
+void PrintRangeFromNto1_UsingWhile(short N) 
+{
+
+	short Counter = N;
+
+	cout << "Range printed using while statement : \n";
+	
+
+	while (Counter >= 1)
+	{
+		cout << Counter << endl;
+		Counter--;
+	}
+}
+
+void PrintRangeFromNto1_UsingDoWhile(short N)
+{
+	short Counter = N;
+
+	cout << "Range printed using Do While statement : \n";
+
+	do
+	{
+		cout << Counter << endl;
+		Counter--;
+
+	} while (Counter >= 1);
+}
+
+void PrintRangeFromNto1_UsingForStatement(short N)
+{
+	cout << "Range printed using For Statement : \n";
+
+	for (short Counter = N; Counter >= 1; Counter--)
+	{
+		cout << Counter << endl;
+	}
+}
+
+int main()
+{
+	short N = ReadNumber();
+	PrintRangeFromNto1_UsingWhile(N);
+	PrintRangeFromNto1_UsingDoWhile(N);
+	PrintRangeFromNto1_UsingForStatement(N);
+	return 0;
+}
+

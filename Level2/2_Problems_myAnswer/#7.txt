@@ -1,0 +1,47 @@
+
+
+
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+
+int ReverseNumber(int Number)
+{
+	string NumberInString = to_string(Number);
+	string ReverseNumber;
+
+	for (int i = NumberInString.length(); i >= 1; i--) {
+		
+		ReverseNumber += NumberInString[i - 1];
+	}
+
+	return stoi(ReverseNumber);
+}
+
+int main()
+{
+	cout << "Reverse Number is\n" << ReverseNumber(ReadPositiveNumber("Enter Positive Number")) << endl;
+
+	return 0;
+}
+

@@ -1,0 +1,65 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+
+float ReadNumber(string Message)
+{
+	float Number = 0;
+
+	cout << Message << endl;
+	cin >> Number;
+
+	return Number;
+}
+
+int MyRound(float Number)
+{
+	int NumberWithoutFraction = (int)Number;
+
+	if (Number > 0)
+	{
+		if (Number >= NumberWithoutFraction + 0.5)
+		{
+			return NumberWithoutFraction + 1;
+		}
+		else
+		{
+			return NumberWithoutFraction;
+		}
+	}
+	else
+	{
+		if (Number <= NumberWithoutFraction - 0.5)
+		{
+			return NumberWithoutFraction - 1;
+		}
+		else
+		{
+			return NumberWithoutFraction;
+		}
+	}
+
+
+
+
+
+}
+
+int main()
+{
+
+	float Number = ReadNumber("Enter a number ?");
+	
+	
+	cout << "My Round result : " << MyRound(Number) << endl;
+	cout << "C++ Round result : " << round(Number) << endl;
+
+	return 0;
+}
+
+

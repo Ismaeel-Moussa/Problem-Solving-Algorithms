@@ -1,0 +1,40 @@
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void ReadNumbers(float& a, float& h)
+{
+	cout << "Enter a:" << endl;
+	cin >> a;
+
+	cout << "Enter h:" << endl;
+	cin >> h;
+}
+
+float CalculateTriangleArea(float a, float h)
+{
+	float Area = (a/2) * h;
+	return Area;
+}
+
+void PrintResult(float Area)
+{
+	cout << "\nTriangle Area = " << Area << endl;
+}
+
+
+int main()
+{
+	float a, h;
+	ReadNumbers(a, h);
+	PrintResult(CalculateTriangleArea(a, h));
+
+	return 0;
+}
+
+
+
+

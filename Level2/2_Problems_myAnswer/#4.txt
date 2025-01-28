@@ -1,0 +1,62 @@
+
+
+
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+bool isPerfectNumber(int Number)
+{
+
+	int Sum = 0;
+
+	for (int Counter = 1; Counter < Number; Counter++)
+	{
+		if (Number % Counter == 0) {
+			Sum += Counter;
+		}
+	}
+
+	return Sum == Number;
+
+}
+
+void PrintPerfectNumberFrom1ToN(int Number)
+{
+	cout << "The Perfect Numbers From 1 to " << Number << " are : \n";
+	for (int i = 1; i <= Number; i++) {
+		if (isPerfectNumber(i)) {
+			cout << i << endl;
+		}
+}
+
+
+	
+}
+
+int main()
+{
+	PrintPerfectNumberFrom1ToN(ReadPositiveNumber("Enter Positive Number ?"));
+	
+	return 0;
+}
+

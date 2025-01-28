@@ -1,0 +1,60 @@
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	// Answer 1 
+
+	int N;
+	//cout << "Enter a number : " << endl;
+	//cin >> N;
+	//int sum = 0;
+	//for (int i = 0; i <= N; i += 2) {
+	//	 sum += i;
+	//	cout << sum  << endl;
+	//}
+
+	// Answer 2 
+
+	int N;
+	cout << "Enter the number : " << endl;
+	cin >> N;
+	int sum = 0;
+	for (int i = 0; i <= N; i++) {
+		if (i % 2 == 0) {
+			sum += i;
+		cout << sum << endl;
+		}
+	}
+	return 0;
+}
+
+
+
+// using while loop
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int i = 1;
+	int sum = 0;
+	while (i <= 10) {
+
+		if (i % 2 == 0) {
+			sum += i;
+		cout << sum << endl;
+		}
+
+		i++;
+
+
+	}
+
+	
+	return 0;
+}

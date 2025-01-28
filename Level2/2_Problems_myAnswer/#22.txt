@@ -1,0 +1,75 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number < 0);
+
+	return Number;
+}
+
+void ReadArrayElements(int Elements[100], int Number)
+{
+
+	for (int i = 0; i < Number; i++)
+	{
+
+		cout << "Element [" << i+1 << "] : ";
+		cin >> Elements[i];
+		cout << "\n";
+		
+	}	
+}
+
+void PrintArrayElements(int Elements[100], int Number)
+{
+	for (int i = 0; i < Number; i++)
+	{
+		cout << Elements[i] << " ";
+	}
+}
+
+void CheckArrayElements(int Elements[100], int Number)
+{
+	int CheckNumber = ReadPositiveNumber("Enter a check Number ?");
+	int Counter = 0;
+
+	for (int i = 1; i <= Number; i++)
+	{		
+		if(CheckNumber == Elements[i-1])
+		{
+			Counter++;
+		}
+	}
+
+	cout << "\nOriginal array: ";
+	PrintArrayElements(Elements, Number);
+	cout << "\n";
+	cout << CheckNumber << " is repeated " << Counter << " time(s)" << endl;
+}
+
+
+int main()
+{
+	int Elements[100] = {};
+	int Number = ReadPositiveNumber("How many elements do you want ?");
+	ReadArrayElements(Elements, Number);
+	CheckArrayElements(Elements, Number);
+
+
+
+
+	return 0;
+}
+

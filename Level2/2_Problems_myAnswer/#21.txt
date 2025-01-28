@@ -1,0 +1,67 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number < 0);
+
+	return Number;
+}
+
+int RandomNumber(int From, int To)
+{
+	// Function to generate a random number
+
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+string GetRandom4Letters()
+{
+	string Random4Letters = "";
+
+	for (int i = 1; i <= 4; i++)
+	{
+		Random4Letters += char(RandomNumber(65, 90));
+	}
+
+	return Random4Letters;
+}
+
+string GenerateKey()
+{
+	string GenerateKey = "";
+
+	GenerateKey = GetRandom4Letters() + "-" + GetRandom4Letters() + "-" + GetRandom4Letters() + "-" + GetRandom4Letters();
+
+	return GenerateKey;
+}
+
+void HowManyGenerateKeys(int Number)
+{
+	for (int i = 1; i <= Number; i++)
+	{
+		cout << "Key [" << i << "] : " << GenerateKey() << endl;
+	}
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	HowManyGenerateKeys(ReadPositiveNumber("How Many Generate Keys Do You Want ?"));
+
+	return 0;
+}
+

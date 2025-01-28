@@ -1,0 +1,100 @@
+#include <iostream>
+#include <cctype>
+#include <string>
+using namespace std;
+
+enum enWhatToCount { SmallLetters = 1 , CapitalLetters = 2, All = 3 };
+
+char ReadChar()
+{
+	char ch1;
+	cout << "Please Enter a character ?\n";
+	cin >> ch1;
+	return ch1;
+}
+
+string ReadString()
+{
+	string S1;
+	cout << "Please Enter Your String ?\n";
+	getline(cin, S1);
+	return S1;
+}
+
+
+short CountLetters(string s1, enWhatToCount WhatToCount = enWhatToCount::All)
+{
+
+	if (WhatToCount == enWhatToCount::All)
+		return s1.length();
+
+
+	short Counter = 0;
+
+	for (int i = 0; i < s1.length(); i++)
+	{
+		if (isupper(s1[i]) && WhatToCount == enWhatToCount::CapitalLetters) {
+			Counter++;
+		}
+
+		if (islower(s1[i]) && WhatToCount == enWhatToCount::SmallLetters) {
+			Counter++;
+		}
+
+	}
+	return Counter;
+}
+
+
+short CountCapitalLetters(string s1)
+{
+	short CapitalLettersCount = 0;
+
+	for (int i = 0; i < s1.length(); i++)
+	{
+		if (isupper(s1[i])) {
+			CapitalLettersCount++;
+		}
+	
+	}
+	return CapitalLettersCount;
+}
+
+short CountSmallLetters(string s1)
+{
+	short SmallLettersCount = 0;
+
+	for (int i = 0; i < s1.length(); i++)
+	{
+		if (islower(s1[i])) {
+			SmallLettersCount++;
+		}
+
+	}
+	return SmallLettersCount;
+}
+
+
+int main()
+{
+
+	string s1 = ReadString();
+
+	cout << "String Length = " << s1.length() << endl;
+	cout << "Capital Letters Count = " << CountCapitalLetters(s1) << endl;
+	cout << "Small Letters Count = " << CountSmallLetters(s1) << endl;
+
+	cout << "\n\nMethod Two\n";
+
+	cout << "String Length = " << CountLetters(s1) << endl;
+	cout << "Capital Letters Count = " << CountLetters(s1,enWhatToCount::CapitalLetters) << endl;
+	cout << "Small Letters Count = " << CountLetters(s1,enWhatToCount::SmallLetters) << endl;
+
+
+
+	system("pause>0");
+
+	return 0;
+
+}
+

@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  
+	int a, h;
+
+	cout << "Enter a: " << endl;
+	cin >> a;
+	cout << "Enter h: " << endl;
+	cin >> h;
+
+	int trangileArea = 0.5 * a * h;
+
+	cout << trangileArea;
+
+	return 0;
+}

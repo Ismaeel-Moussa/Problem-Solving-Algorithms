@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int ATMPIN;
+	int UserBalance = 7500;
+
+	cout << "Enter Your ATM PIN : " << endl;
+	cin >> ATMPIN;
+
+
+	if (ATMPIN == 1234) {
+
+		cout << "Your Balance is :" << UserBalance << endl;
+	}
+	else {
+
+		cout << "Wrong PIN" << endl;
+	}
+
+	return 0;
+}

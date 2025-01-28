@@ -1,0 +1,136 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+struct sDate
+{
+	short Year;
+	short Month;
+	short Day;
+};
+
+short ReadYear()
+{
+	short Year = 0;
+	cout << "Please Enter a year? ";
+	cin >> Year;
+	return Year;
+}
+
+short ReadMonth()
+{
+	short Number = 0;
+	cout << "Please Enter a month? ";
+	cin >> Number;
+	return Number;
+}
+
+short ReadDay()
+{
+	short Day = 0;
+	cout << "Please Enter a day? ";
+	cin >> Day;
+	return Day;
+}
+
+sDate ReadFullDate()
+{
+	sDate Date;
+
+	Date.Day = ReadDay();
+	Date.Month = ReadMonth();
+	Date.Year = ReadYear();
+
+
+	return Date;
+}
+
+string ReadStringDate(string Message)
+{
+	string S1;
+	cout << Message;
+	getline(cin, S1);
+	return S1;
+}
+
+
+bool isLeapYear(short Year)
+{
+	return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
+
+}
+
+int NumberOfDaysInMonths(short Month, short Year)
+{
+	if (Month < 1 || Month > 12)
+		return 0;
+
+	short DaysInMonths[12] = { 31,28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	return (Month == 2) ? (isLeapYear(Year) ? 29 : 28) : DaysInMonths[Month - 1];
+
+}
+
+vector <string> SplitString(string S1, string delim)
+{
+	vector <string> vString;
+	short pos = 0;
+	string sWord;
+
+	while ((pos = S1.find(delim)) != string::npos)
+	{
+		sWord = S1.substr(0, pos); // strore the word
+		if (sWord != "")
+		{
+			vString.push_back(sWord);
+		}
+
+		S1.erase(0, pos + delim.length());
+	}
+
+	if (S1 != "")
+	{
+		vString.push_back(S1);
+	}
+
+	return vString;
+
+}
+
+sDate StringToDate(string DateString)
+{
+	vector <string> vDate = SplitString(DateString, "/");
+
+	sDate Date;
+
+	Date.Day = stoi(vDate[0]);
+	Date.Month = stoi(vDate[1]);
+	Date.Year = stoi(vDate[2]);
+
+	return Date;
+}
+
+string DateToString(sDate Date)
+{
+	return to_string(Date.Day) + "/" + to_string(Date.Month) + "/" + to_string(Date.Year);
+}
+
+int main()
+{
+
+	string SringDate = ReadStringDate("Please enter date dd/mm/yyyy? ");
+
+	sDate Date = StringToDate(SringDate);
+
+	cout << "Day:" << Date.Day << endl;
+	cout << "Month:" << Date.Month << endl;
+	cout << "Year:" << Date.Year << endl;
+
+
+	cout << "\nYou Entered: " << DateToString(Date);
+
+
+	return 0;
+}

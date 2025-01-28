@@ -1,0 +1,108 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+void PrintMatrix(int matrix[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			printf("%d\t", matrix[i][j]);
+		}
+		cout << endl;
+	}
+
+	cout << "\n";
+}
+
+int RandomNumber(int From, int To)
+{
+	// Function to generate a random number
+
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			arr[i][j] = RandomNumber(1, 100);
+		}
+	}
+}
+
+short MaxNumberInMatrix(int matrix1[3][3], short Rows, short Cols)
+{
+	int MaxNumber = matrix1[0][0];
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			if (matrix1[i][j] > MaxNumber)
+			{
+				MaxNumber = matrix1[i][j];
+			}
+		}
+	}
+
+	return MaxNumber;
+}
+
+short MinNumberInMatrix(int matrix1[3][3], short Rows, short Cols)
+{
+	int MinNumber = matrix1[0][0];
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			if (matrix1[i][j] < MinNumber)
+			{
+				MinNumber = matrix1[i][j];
+			}
+		}
+	}
+
+	return MinNumber;
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int matrix1[3][3];
+
+	cout << "Matrix1: " << endl;
+	FillMatrixWithRandomNumbers(matrix1, 3, 3);
+	PrintMatrix(matrix1, 3, 3);
+
+	cout << "Minimum Number is : " << MinNumberInMatrix(matrix1, 3, 3) << endl;
+
+	cout << "Maximum Number is : " << MaxNumberInMatrix(matrix1, 3, 3) << endl;
+
+
+	system("pause>0");
+
+	return 0;
+
+}

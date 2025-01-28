@@ -1,0 +1,46 @@
+
+
+
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+
+void PrintNumberInReversedOrder(int Number)
+{
+	string NumberInString = to_string(Number);
+
+	for (int i = 1; i <= NumberInString.length(); i++) {
+		cout << NumberInString[i-1] << endl;
+
+
+	}
+
+}
+
+int main()
+{
+	PrintNumberInReversedOrder(ReadPositiveNumber("Enter Positive Number"));
+
+	return 0;
+}
+

@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+void PrintMatrix(int matrix[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			printf("%d\t", matrix[i][j]);
+		}
+		cout << endl;
+	}
+
+	cout << "\n";
+}
+
+int RandomNumber(int From, int To)
+{
+	// Function to generate a random number
+
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short Cols)
+{
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			arr[i][j] = RandomNumber(1, 10);
+		}
+	}
+}
+
+short CountNumberInMatrix(int matrix1[3][3],short Rows ,short Cols,int Number)
+{
+	short Counter = 0;
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Cols; j++)
+		{
+			if (Number == matrix1[i][j])
+			{
+				Counter++;
+			}
+		}
+	}
+
+	return Counter;
+}
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int matrix1[3][3];
+
+	cout << "Matrix1: " << endl;
+	FillMatrixWithRandomNumbers(matrix1, 3, 3);
+	PrintMatrix(matrix1, 3, 3);
+
+	int Number;
+	cout << "Enter the number to count in matrix ?" << endl;
+	cin >> Number;
+
+	printf("Number %d Count in matrix is %d", Number, CountNumberInMatrix(matrix1,3,3,Number));
+
+	system("pause>0");
+
+	return 0;
+
+}
+

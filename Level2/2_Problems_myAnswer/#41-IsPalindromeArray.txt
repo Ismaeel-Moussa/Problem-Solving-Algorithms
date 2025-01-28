@@ -1,0 +1,52 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+void PrintArray(int arr[100], int arrLength)
+{
+	for (int i = 0; i < arrLength; i++)
+	{
+		cout << arr[i] << " ";
+	}
+
+	cout << "\n" << endl;
+}
+
+bool IsPalindromeArray(int arr[100], int arrLength)
+{
+	int Count = 0;
+	for (int i = 0; i < arrLength; i++)
+	{
+		if (arr[i] != arr[arrLength - 1 - i])
+		{
+			return false;
+		}
+	}
+
+	return true;
+}	
+
+int main()
+{
+	// Seeds the random number generator in C++ , called only once
+	srand((unsigned)time(NULL));
+
+	int arr[100] = {10,2270,3720,30,3720,2270,10};
+	int arrLength = 7;
+
+	cout << "Array 1 elements :\n";
+	PrintArray(arr, arrLength);
+
+	if (IsPalindromeArray(arr, arrLength))
+		cout << "Yes array is palindrome\n";
+	else
+		cout << "NO array is NOT palindrome\n";
+	
+	return 0;
+}
+
+

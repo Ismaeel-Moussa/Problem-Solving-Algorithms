@@ -1,0 +1,56 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+short ReadNumber()
+{
+	short Number;
+
+	cout << "Enter a Number ?\n";
+	cin >> Number;
+
+	return Number;
+
+}
+
+short ReadPower()
+{
+	short Number;
+
+	cout << "Enter a Power ?\n";
+	cin >> Number;
+
+	return Number;
+
+}
+
+short PowerOfM(short Number, short M)
+{
+	if (M == 0)
+	{
+		// any number powered to zero gives 1
+		return 1;
+	}
+
+	short P = 1;
+
+	for (short i = 1; i <= M; i++)
+	{
+		P *= Number;
+	}
+
+	return P;
+}
+
+
+int main()
+{
+	short N = ReadNumber();
+	cout << "Results : " << PowerOfM(N, ReadPower());
+
+	return 0;
+}
+

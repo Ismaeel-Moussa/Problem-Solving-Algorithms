@@ -1,0 +1,51 @@
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+int GetDigitFrequency(int Number, int Digit)
+{
+
+	int Remainder = 0, NumberOfFrequency = 0;
+
+	while (Number > 0)
+	{
+		Remainder = Number % 10;
+		Number = Number / 10;
+		if (Remainder == Digit) {
+			NumberOfFrequency++;
+		}
+	}
+
+	return NumberOfFrequency;
+}
+
+
+
+int main()
+{	
+	int Number = ReadPositiveNumber("Enter a positive number ?");
+	int Digit = ReadPositiveNumber("Enter a Digit ?");
+
+	cout << "Digit " << Digit << " Frequency is " << GetDigitFrequency(Number, Digit) << " Time(s)." << endl;
+	
+
+	return 0;
+}
+

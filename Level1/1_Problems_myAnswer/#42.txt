@@ -1,0 +1,33 @@
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int ConvertingtoSecondsFunction(int Days, int Hours, int Minutes, int Seconds) {
+
+	int SecondsPerDays = 24 * 60 * 60;
+	int SecondsPerHours = 60 * 60;
+	int secondsPerMinutes = 60;
+
+	return Days * SecondsPerDays + Hours * SecondsPerHours + Minutes * secondsPerMinutes + Seconds;
+}
+int main()
+{
+
+	int Days, Hours, Minutes, Seconds;
+
+	cout << "Enter The Days :" << endl;
+	cin >> Days;
+	cout << "Enter The Hours :" << endl;
+	cin >> Hours;
+	cout << "Enter The Minutes :" << endl;
+	cin >> Minutes;
+	cout << "Enter The Seconds :" << endl;
+	cin >> Seconds;
+
+	cout << ConvertingtoSecondsFunction(Days,Hours,Minutes,Seconds) << " seconds";
+
+	return 0;
+}

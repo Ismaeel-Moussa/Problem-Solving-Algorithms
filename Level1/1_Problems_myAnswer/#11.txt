@@ -1,0 +1,31 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float Mark1, Mark2, Mark3;
+
+	cout << "Enter the Mark 1 : " << endl;
+	cin >> Mark1;
+	cout << "Enter the Mark 2 : " << endl;
+	cin >> Mark2;
+	cout << "Enter the Mark 3 : " << endl;
+	cin >> Mark3;
+
+	float Average = (Mark1 + Mark2 + Mark3) / 3;
+
+	if (Average >= 50) {
+
+		cout << "PASS" << endl;
+		cout << Average << endl;
+	}
+	else {
+
+		cout << "Fail" << endl;
+		cout << Average << endl;
+	}
+
+	return 0;
+}

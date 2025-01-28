@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float CircleAreaFunction(int r) {
+	return 3.14 * pow(r, 2);
+}
+int main()
+{
+
+	float r;
+	cout << "Enter r :" << endl;
+	cin >> r;
+
+
+	cout << CircleAreaFunction(r);
+
+
+	return 0;
+}
+
+

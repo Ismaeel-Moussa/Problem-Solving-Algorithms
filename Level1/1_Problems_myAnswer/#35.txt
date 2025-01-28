@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  
+	int Penny = 1;
+	int Nickel = 5;
+	int Dime = 10;
+	int Quarter = 25;
+	int Dollar = 100;
+
+	int Pennies, Nickels, Dimes, Quarters, Dollars;
+
+	cout << "Enter the Pennies" << endl;
+	cin >> Pennies;
+	cout << "Enter the Nickels" << endl;
+	cin >> Nickels;
+	cout << "Enter the Dimes" << endl;
+	cin >> Dimes;
+	cout << "Enter the Quarters" << endl;
+	cin >> Quarters;
+	cout << "Enter the Dollars" << endl;
+	cin >> Dollars;
+	
+	int totalPennies = Penny * Pennies + Nickel * Nickels + Dime * Dimes + Quarter * Quarters + Dollar * Dollars;
+	int totalDollars = totalPennies / Dollar;
+
+	cout << totalPennies << " Pennies" << endl;
+	cout << totalDollars << " Dollars" << endl;
+	return 0;
+}

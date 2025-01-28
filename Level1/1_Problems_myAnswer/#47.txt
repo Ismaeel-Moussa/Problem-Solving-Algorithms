@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int LoanAmount, MonthlyPayment;
+
+	cout << "Enter the LoanAmount :" << endl;
+	cin >> LoanAmount;
+	cout << "Enter the MonthlyPayment :" << endl;
+	cin >> MonthlyPayment;
+
+	cout << LoanAmount / MonthlyPayment << " Months" << endl;
+
+	return 0;
+}

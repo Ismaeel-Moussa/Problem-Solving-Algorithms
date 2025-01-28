@@ -1,0 +1,34 @@
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void ConvertingSecondstoDaysHoursMinutesSecondsProcedure(int NumberOfSeconds) {
+
+	int SecondsPerDays = 24 * 60 * 60;
+	int SecondsPerHours = 60 * 60;
+	int secondsPerMinutes = 60;
+	int Days, Hours, Minutes, Seconds, Remainder;
+
+	Days = floor(NumberOfSeconds / SecondsPerDays);
+	Remainder = NumberOfSeconds % SecondsPerDays;
+	Hours = floor(Remainder / SecondsPerHours);
+	Remainder = Remainder % SecondsPerHours;
+	Minutes = floor(Remainder / secondsPerMinutes);
+	Remainder = Remainder % secondsPerMinutes;
+	Seconds = Remainder;
+	
+	 cout << Days << ":" << Hours << ":" << Minutes << ":" << Seconds;
+
+}
+int main()
+{
+
+	int NumberOfSeconds;
+	cout << "Enter The Number of Seconds :" << endl;
+	cin >> NumberOfSeconds;
+	ConvertingSecondstoDaysHoursMinutesSecondsProcedure(NumberOfSeconds);
+
+	return 0;
+}

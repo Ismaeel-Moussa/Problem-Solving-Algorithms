@@ -1,0 +1,64 @@
+//
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+enum enWhatToSum { All = 1, Even = 2, Odd = 3 };
+
+short ReadNumber() {
+
+	short Number;
+	cout << "Enter a number to sum at All or Even or Odd : " << endl;
+	cin >> Number;
+
+	return Number;
+}
+
+enWhatToSum ReadWhatToSum()
+{
+	cout << "****************\n";
+	cout << "[1] = All\n";
+	cout << "[2] = Even\n";
+	cout << "[3] = Odd\n";
+	cout << "****************\n";
+	cout << "What do you want ? \n";
+	short Wh;
+	cin >> Wh;
+	return (enWhatToSum)Wh;
+
+}
+
+void SumNumbers(short Number, enWhatToSum choose)
+{
+	short Sum = 0;
+
+	for (int i = 1; i <= Number; i++) {
+		if (choose == enWhatToSum::All) {
+			Sum += i;
+		}
+		else if (choose == enWhatToSum::Even) {
+			if (i % 2 == 0) {
+				Sum += i;
+			}
+		}
+		else {
+			if (i % 2 != 0) {
+				Sum += i;
+			}
+		}
+	}
+
+	cout << Sum << endl;
+}
+
+
+
+int main()
+{
+	short N = ReadNumber();
+	SumNumbers(N, ReadWhatToSum());
+	return 0;
+}
+
